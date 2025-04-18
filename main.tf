@@ -70,6 +70,15 @@ resource "aws_security_group" "ansible_sg" {
     Name = "ansible-node-sg"
   }
 }
+resource "aws_security_group_rule" "allow_http" {
+  type              = "ingress"
+  from_port         = 80
+  to_port           = 80
+  protocol          = "tcp"
+  cidr_blocks       = ["0.0.0.0/0"]
+  security_group_id = aws_security_group.ansible_sg.id
+  description       = "Allow HTTP traffic"
+}
 
 
 resource "aws_instance" "ansible_managed_node" {

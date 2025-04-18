@@ -1,0 +1,15 @@
+---
+- name: Install Nginx on EC2 instance
+  hosts: node1
+  become: true  
+  tasks:
+    - name: Install Nginx
+      yum:
+        name: nginx
+        state: present
+
+    - name: Start Nginx service
+      service:
+        name: nginx
+        state: started
+        enabled: true
