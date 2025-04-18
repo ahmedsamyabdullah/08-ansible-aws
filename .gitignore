@@ -1,0 +1,18 @@
+# Ignore Terraform state files
+*.tfstate
+*.tfstate.*
+
+# Ignore Terraform crash logs
+crash.log
+
+# Ignore Terraform provider and module caches
+.terraform/
+.terraform.lock.hcl
+
+# Ignore Terraform variable files (may contain secrets)
+terraform.tfvars
+terraform.tfvars.json
+
+# Ignore Terraform plan files
+*.tfplan
+jenkins-key.pem
